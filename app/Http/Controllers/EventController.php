@@ -16,6 +16,7 @@ class EventController extends Controller
     public function index(Request $request)
     {
         $search = $request->search;
+        $totalEvents = Event::count();
 
         $events = Event::when($search, function ($query) use ($search) {
 
@@ -27,7 +28,7 @@ class EventController extends Controller
             ->latest()
             ->paginate(10);
 
-        return view('admin.events.index', compact('events'));
+        return view('admin.events.index', compact('events, totalEvents'));
     }
 
     /**

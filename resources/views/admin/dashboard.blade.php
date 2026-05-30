@@ -14,7 +14,7 @@
         </h2>
 
         <p class="text-4xl font-bold">
-            12
+            {{ $totalArticles }}
         </p>
     </div>
 
@@ -24,17 +24,7 @@
         </h2>
 
         <p class="text-4xl font-bold">
-            5
-        </p>
-    </div>
-
-    <div class="bg-white p-6 rounded-2xl shadow">
-        <h2 class="text-gray-500 mb-2">
-            Gallery Images
-        </h2>
-
-        <p class="text-4xl font-bold">
-            24
+            {{ $totalEvents }}
         </p>
     </div>
 
