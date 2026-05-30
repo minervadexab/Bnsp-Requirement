@@ -149,64 +149,53 @@
 <!-- Category Filter -->
 <div class="flex flex-wrap gap-4 mt-stack-lg">
 
-{{-- ALL --}}
-        <a href="{{ route('articles') }}"
-           class="{{ !request('category') ? 'bg-secondary text-white' : 'bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-primary' }} px-6 py-2 rounded-full font-label-md text-label-md transition-all">
-            All Articles
-        </a>
+    {{-- ALL --}}
+    <a
+        href="{{ route('articles') }}"
+        class="{{ !request('category') ? 'bg-secondary text-white' : 'bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-primary' }}
+        px-6 py-2 rounded-full font-label-md text-label-md transition-all"
+    >
+        All Articles
+    </a>
 
-        {{-- TECH --}}
-        <a href="{{ route('articles', ['category' => 'Tech Trends']) }}"
-           class="{{ request('category') == 'Tech Trends' ? 'bg-secondary text-white' : 'bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-primary' }} px-6 py-2 rounded-full font-label-md text-label-md transition-all">
-            Tech Trends
-        </a>
+    {{-- TECH --}}
+    <a
+        href="{{ route('articles', ['category' => 'Tech Trends']) }}"
+        class="{{ request('category') == 'Tech Trends' ? 'bg-secondary text-white' : 'bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-primary' }}
+        px-6 py-2 rounded-full font-label-md text-label-md transition-all"
+    >
+        Tech Trends
+    </a>
 
-        {{-- CASE --}}
-        <a href="{{ route('articles', ['category' => 'Case Studies']) }}"
-           class="{{ request('category') == 'Case Studies' ? 'bg-secondary text-white' : 'bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-primary' }} px-6 py-2 rounded-full font-label-md text-label-md transition-all">
-            Case Studies
-        </a>
+    {{-- CASE --}}
+    <a
+        href="{{ route('articles', ['category' => 'Case Studies']) }}"
+        class="{{ request('category') == 'Case Studies' ? 'bg-secondary text-white' : 'bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-primary' }}
+        px-6 py-2 rounded-full font-label-md text-label-md transition-all"
+    >
+        Case Studies
+    </a>
 
-        {{-- AI --}}
-        <a href="{{ route('articles', ['category' => 'AI & Data']) }}"
-           class="{{ request('category') == 'AI & Data' ? 'bg-secondary text-white' : 'bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-primary' }} px-6 py-2 rounded-full font-label-md text-label-md transition-all">
-            AI & Data
-        </a>
+    {{-- AI --}}
+    <a
+        href="{{ route('articles', ['category' => 'AI & Data']) }}"
+        class="{{ request('category') == 'AI & Data' ? 'bg-secondary text-white' : 'bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-primary' }}
+        px-6 py-2 rounded-full font-label-md text-label-md transition-all"
+    >
+        AI & Data
+    </a>
 
-        {{-- STRATEGY --}}
-        <a href="{{ route('articles', ['category' => 'Strategy']) }}"
-           class="{{ request('category') == 'Strategy' ? 'bg-secondary text-white' : 'bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-primary' }} px-6 py-2 rounded-full font-label-md text-label-md transition-all">
-            Strategy
-        </a>
-    </div>
+    {{-- STRATEGY --}}
+    <a
+        href="{{ route('articles', ['category' => 'Strategy']) }}"
+        class="{{ request('category') == 'Strategy' ? 'bg-secondary text-white' : 'bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-primary' }}
+        px-6 py-2 rounded-full font-label-md text-label-md transition-all"
+    >
+        Strategy
+    </a>
 
-    {{-- Daftar Artikel --}}
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        @forelse($articles as $article)
-            <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
-                @if($article->image)
-                    <img src="{{ asset('storage/' . $article->image) }}" alt="{{ $article->title }}" class="w-full h-48 object-cover">
-                @endif
-                <div class="p-6">
-                    <span class="text-sm text-primary font-semibold">{{ $article->category ?? 'Uncategorized' }}</span>
-                    <h2 class="text-xl font-bold mt-2 mb-3">{{ $article->title }}</h2>
-                    <p class="text-gray-600 line-clamp-3">{{ $article->excerpt ?? Str::limit($article->content, 100) }}</p>
-                    <a href="{{ route('articles.show', $article->id) }}" class="inline-block mt-4 text-primary font-semibold hover:underline">
-                        Read More →
-                    </a>
-                </div>
-            </div>
-        @empty
-            <div class="col-span-full text-center py-12">
-                <p class="text-gray-500">No articles found in this category.</p>
-                <a href="{{ route('articles') }}" class="inline-block mt-4 text-primary hover:underline">
-                    View all articles
-                </a>
-            </div>
-        @endforelse
-    </div>
+</div>
       </div>
-      
     </section>
 
     <!-- Featured Article (Bento Style Hybrid) -->
