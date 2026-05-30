@@ -31,6 +31,13 @@ class EventController extends Controller
         return view('admin.events.index', compact('events, totalEvents'));
     }
 
+        public function indexAdmin()
+    {
+
+        $totalEvents = Event::count();
+
+        return view('admin.dashboard', compact('totalEvents'));
+    }
     /**
      * Show the form for creating a new resource.
      */

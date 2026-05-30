@@ -16,6 +16,14 @@ class ArticleController extends Controller
         return view('admin.articles.index', compact('articles, totalArticles'));
     }
 
+    public function indexAdmin()
+    {
+
+        $totalArticles = Article::count();
+
+        return view('admin.dashboard', compact('totalArticles'));
+    }
+
     public function create()
     {
         return view('admin.articles.create');
