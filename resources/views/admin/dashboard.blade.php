@@ -14,7 +14,7 @@
         </h2>
 
         <p class="text-4xl font-bold">
-            {{ $totalArticles }}
+            {{ \App\Models\Article::count() }}
         </p>
     </div>
 
@@ -24,7 +24,7 @@
         </h2>
 
         <p class="text-4xl font-bold">
-            {{ $totalEvents }}
+            {{ \App\Models\Event::count() }}
         </p>
     </div>
 
