@@ -33,7 +33,7 @@
 <div class="mt-10 bg-white p-6 rounded-2xl shadow">
 
     <h2 class="text-2xl font-semibold mb-4">
-        Welcome Back 👋
+        Welcome Back BROWWWW
     </h2>
 
     <p class="text-gray-600">
