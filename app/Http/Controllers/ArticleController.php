@@ -11,9 +11,9 @@ class ArticleController extends Controller
     public function index()
     {
         $articles = Article::latest()->get();
-        $totalArticles = Article::count();
+        // $totalArticles = Article::count()
 
-        return view('admin.articles.index', compact('articles, totalArticles'));
+        return view('admin.articles.index', compact('articles'));
     }
 
     public function indexAdmin()
